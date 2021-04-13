@@ -6,7 +6,9 @@ import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.sanicorporation.smitproject.R
 import com.sanicorporation.smitproject.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     val viewModel: MainViewModel by viewModels()
@@ -20,5 +22,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun setUpBinding() {
         binding.viewmodel = viewModel
+        binding.lifecycleOwner = this
     }
 }
